@@ -18,9 +18,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         $staff = User::create([
-            'first_name' => 'admin',
+            'first_name' => 'System',
             'middle_name' => 'admin',
-            'last_name' => 'admin',
+            'last_name' => 'Administrator',
             'student_id' => '123123',
             'course' => 'bsit',
             'email' => 'admin@example.com',
@@ -29,9 +29,9 @@ class UserSeeder extends Seeder
             'updated_at' => now(),
         ]);
         $student = User::create([
-            'first_name' => 'test',
+            'first_name' => 'Default',
             'middle_name' => 'test',
-            'last_name' => 'test',
+            'last_name' => 'Student',
             'student_id' => '123123',
             'course' => 'bsit',
             'email' => 'test@example.com',

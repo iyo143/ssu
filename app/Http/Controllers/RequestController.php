@@ -14,6 +14,7 @@ use Session;
 
 class RequestController extends Controller
 {
+    public $dates = [];
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +37,8 @@ class RequestController extends Controller
         $pends = 1;
         $documents = Document::get();
         $req = Requests::orderBY('id', 'DESC')->get();
-        return view('student-profile', compact('req', 'documents', 'user','count', 'pends'));
+        $att = DocumentUser::get();
+        return view('student-profile', compact('req', 'documents', 'user','count', 'pends', 'att'));
     }
 
     /**
@@ -124,17 +126,15 @@ class RequestController extends Controller
     public function update(RequestDocument $request)
     {
         $validated = $request->validated();
-
         foreach ($validated['documents'] as $docs){
-            $documents = DocumentUser::find($docs);
+        $documents = DocumentUser::find($docs);
             $documents->status = 1;
+            $documents->date = $validated['date'];
             $documents->save();
         }
         Alert::success('Success', 'Successfully Updated Request');
         return redirect()->back()->with('message', 'Request has been done successfully');
-
     }
-
 
     /**
      * Remove the specified resource from storage.

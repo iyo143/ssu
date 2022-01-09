@@ -20,10 +20,19 @@ class DocumentController extends Controller
         $documents = Document::get();
         return view('admin-add-documents', compact('requirements', 'documents'));
     }
+
+    public function rule(){
+        return [
+            'price' => 'required|numeric',
+        ];
+    }
     public function store(DocumentRequest $request){
 
-        $validated = $request->validated();
-      
+        $validated = $request->validated([
+            'doc_name' => 'required',
+            'price' => 'required|numeric'
+        ]);
+    
         $document = Document::create([
             'document_name' => $validated['doc_name'],
             'price' => $validated['doc_price']

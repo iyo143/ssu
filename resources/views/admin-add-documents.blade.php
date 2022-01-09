@@ -19,7 +19,6 @@
                         <div class="card-body">
                             <form method="POST" action="{{ route('document.add') }}">
                                 @csrf
-
                                 <div class="form-group row">
                                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Document Name') }}</label>
                                     <div class="col-md-6">
@@ -35,7 +34,7 @@
                                 <div class="form-group row">
                                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Price(₱)') }}</label>
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="doc_price" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        <input id="name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="doc_price" value="{{ old('name') }}" required autocomplete="name" autofocus maxlength="4">
                                         @error('first_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

@@ -18,6 +18,7 @@ class CreateDocumentUserTable extends Migration
             $table->string('status')->default(0);
             $table->foreignId('document_id')->nullable()->constrained('documents')->nullOnDelete();
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('date')->nullable();
             $table->timestamps();
         
         });
