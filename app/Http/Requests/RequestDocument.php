@@ -24,7 +24,8 @@ class RequestDocument extends FormRequest
     public function rules()
     {
         return [
-            'documents.*' => 'required'
+            'documents.*' => 'required',
+            'date' => 'required'
         ];
     }
 }

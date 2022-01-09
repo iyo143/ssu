@@ -9,5 +9,7 @@ class DocumentUser extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['date',];
+    
     protected $table = 'document_user';
 }

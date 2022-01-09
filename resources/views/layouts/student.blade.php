@@ -49,10 +49,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#mission"><i class="fas fa-check-square"></i> Mission</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#vission"><i class="fas fa-eye"></i> Vision</a></li>
                         @role('student')
                         <li class="nav-item"><a class="nav-link" href="{{route('student.profile')}}"><i class="fas fa-clipboard-check"></i> My Dashboard</a></li>
                         @endrole

@@ -25,11 +25,11 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <select class="form-select" aria-label="Default select example">
-                                        <option selected>Done</option>
+                                        <option selected>Receiving at</option>
                                         @foreach ($user->documents as $docs)
                                             @if ($docs->pivot->status == 1)
-                                                <option value="{{$docs->id}}" disabled>{{$docs->document_name}}</option>
-                                            @endif
+                                                <option value="{{$docs->id}}" disabled>{{$docs->pivot->date . ' -- '. $docs->document_name}}</option>
+                                            @endif  
                                         @endforeach
                                     </select>
                                 </div>

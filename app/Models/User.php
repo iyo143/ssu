@@ -48,7 +48,7 @@ class User extends Authenticatable
     ];
 
     public function documents(){
-        return $this->belongsToMany(Document::class)->withPivot(['status', 'id']);
+        return $this->belongsToMany(Document::class)->withPivot(['status', 'id' , 'date']);
     }
 
     public function getFullNameAttribute() {
